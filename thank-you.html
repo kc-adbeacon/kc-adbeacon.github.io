@@ -8,6 +8,86 @@
     <title>Document</title>
 </head>
 <body>
+
 <h1>Thank you for your order</h1>
+
+<script>
+    Window.adBeaconCheckoutData = {
+    "order_id": "ABC123",
+    "order_date_time": "2023-01-01 16:00:00", // UTC Datetime, Required
+    "order_update_date_time": "2023-01-01 16:00:00", // UTC Datetime, Optional
+    "payment_currency": "USD", // String, Required
+
+// Payment currency is the currency in which the customer made the payment
+    "sub_total_price_in_payment_currency": 350.00, // Numeric, Required
+    "discount_in_payment_currency": 50.00, // Numeric, Optional
+    "total_tax_in_payment_currency": 25.00, // Numeric, Optional
+    "shipping_rate_in_payment_currency": 10.00, // Numeric, Optional
+    "total_price_in_payment_currency": 335.00, // Numeric, Required
+    "discount_code": "DEMO_COUPON", // String, Optional
+
+// Store currency is the base currency of your store.
+    "sub_total_price_in_store_currency": 350.00, // Numeric, Required
+    "discount_in_store_currency": 50.00, // Numeric, Optional
+    "total_tax_in_store_currency": 25.00, // Numeric, Optional
+    "shipping_rate_in_store_currency": 10.00, // Numeric, Optional
+    "total_price_in_store_currency": 335.00, // Numeric, Required
+
+    "customer_id": "CUS123", // String, Required
+    "email": "customer@example.com", // String, Optional
+    "phone": '+19876543210', // String, Optional
+
+    "latitude": 37.4134508, // Numeric, Optional
+    "longitude": -122.151308, // Numeric, Optional
+    "line_items": [
+        {
+            "line_item_id": "li_1", // String, Optional
+            "product_id": "prod_1", // String, Required
+            "variant_id": "var_1", // String, Optional
+            "sku": "sku_1", // String, Optional
+            "product_name": "Product One", // String, Optional
+            "price_in_payment_currency": 100.00, // Numeric, Required
+            "price_in_store_currency": 100.00, // Numeric, Required
+            "quantity": 1, // Numeric, Required
+            "item_image": "https://example.com/prod_1.png", // String, Optional
+        }, {
+            "line_item_id": "li_2", // String, Optional
+            "product_id": "prod_2", // String, Required
+            "variant_id": "var_2", // String, Optional
+            "sku": "sku_2", // String, Optional
+            "product_name": "Product Two", // String, Optional
+            "price_in_payment_currency": 250.00, // Numeric, Required
+            "price_in_store_currency": 250.00, // Numeric, Required
+            "quantity": 1, // Numeric, Required
+            "item_image": "https://example.com/prod_2.png", // String, Optional
+        },
+    ],
+    "billing_address": {
+        "address_id": "add_123",  // String, Optional
+        "first_name": "John", // String, Optional
+        "last_name": "Doe",// String, Optional
+        "company": "company_name", // String, Optional
+        "address1": "Address line 1", // String, Optional
+        "address2": "Address line 2", // String, Optional
+        "city": "Los Angeles", // String, Required
+        "province": "California", // String, Optional
+        "province_code": "CA", // String, Optional
+        "country": "US", // String, Required
+        "zip": "90001", // String, Required
+    }
+};
+
+</script>
+    <!-- AdBeacon -->
+    <script>
+        function adBeaconStartRenderingScript() {
+            let t = document.createElement("script");
+            t.src = "https://app.adbeacon.com/os/k6ct0ltx21tl3tz8?" + Date.now(),
+                t.async = !0,
+                document.head.append(t);
+        }
+        document.addEventListener("DOMContentLoaded", adBeaconStartRenderingScript);
+        </script>
+        <!-- End AdBeacon -->
 </body>
 </html>
