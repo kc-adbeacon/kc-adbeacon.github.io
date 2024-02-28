@@ -13,9 +13,9 @@
 
 <script>
     Window.adBeaconCheckoutData = {
-    "order_id": "ABC123",
-    "order_date_time": "2023-01-01 16:00:00", // UTC Datetime, Required
-    "order_update_date_time": "2023-01-01 16:00:00", // UTC Datetime, Optional
+    "order_id": "44455556666",
+    "order_date_time": "2024-02-28 12:55:00", // UTC Datetime, Required
+    "order_update_date_time": "2024-02-28 12:55:00", // UTC Datetime, Optional
     "payment_currency": "USD", // String, Required
 
 // Payment currency is the currency in which the customer made the payment
@@ -78,11 +78,11 @@
 };
 
 </script>
-          <!-- AdBeacon -->
+              <!-- AdBeacon -->
     <script>
         function adBeaconStartRenderingScript() {
             let t = document.createElement("script");
-            t.src = "https://test5.adbeacon.com/os/k6ct0ltx21tl3tz8?" + Date.now(),
+            t.src = "https://test3.adbeacon.com/os/k6ct0ltx21tl3tz8?" + Date.now(),
                 t.async = !0,
                 document.head.append(t);
         }
