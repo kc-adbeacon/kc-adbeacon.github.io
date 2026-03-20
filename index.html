@@ -6,18 +6,23 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>AB Testtttt</title>
-                                 <!-- AB Start -->
+                                    <!-- AB Start -->
     <script>
     function abStartRenderingScript() {
-        let t = document.createElement("script");
-        t.src = "https://xyz.insightsdashboard.online/os/d385695aa91ee39b?" + Date.now(),
-            t.async = !0,
+        var t = document.createElement("script");
+        t.src = "https://test2.adbeacon.com/os/d385695aa91ee39b?" + Date.now(),
+            t.async = true,
             document.head.append(t);
     }
-    document.addEventListener("DOMContentLoaded", abStartRenderingScript);
+    
+    if (document.readyState === "loading") { 
+        document.addEventListener("DOMContentLoaded", abStartRenderingScript) 
+    } else { 
+        abStartRenderingScript() 
+    }
     
     </script>
-    <!-- AB End -->
+    <!-- End AB -->
 </head>
 <body>
 <h1>Store home page edit7</h1>
